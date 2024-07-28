@@ -1,4 +1,4 @@
-package twentyfour.spring.oop.group2.finalproject.src;
+package twentyfour.spring.oop.group2.finalproject.m23w7314;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class DeleteQuiz {
 
-    private static final String QUIZ_NAMES_FILE = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\resources\\quiz_names.txt";
-    private static final String QUIZ_DIRECTORY = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\resources\\";
+    private static final String QUIZ_NAMES_FILE = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\m23w7314\\files\\quiz_names.txt";
+    private static final String QUIZ_DIRECTORY = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\m23w7314\\files\\";
 
     public static void deleteQuiz(String username) {
         Scanner scanner = new Scanner(System.in);

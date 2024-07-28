@@ -1,5 +1,4 @@
-package twentyfour.spring.oop.group2.finalproject.src;
-
+package twentyfour.spring.oop.group2.finalproject.m23w7314;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -7,7 +6,7 @@ import java.util.Scanner;
 
 public class createQuiz {
 
-    private static final String QUIZ_NAMES_FILE = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\resources\\quiz_names.txt";
+    private static final String QUIZ_NAMES_FILE = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\m23w7314\\files\\quiz_names.txt";
     private static final int MAX_QUESTIONS = 5;
 
     public static void quizCreations(String username) {
@@ -17,7 +16,7 @@ public class createQuiz {
 
         if (!title.isEmpty() && !username.isEmpty()) {
             String fileName = title.replaceAll("\\s+", "_") + ".txt";
-            fileName = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\resources\\" + fileName;
+            fileName = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\m23w7314\\files\\" + fileName;
 
             if (isQuizNameValid(title)) {
                 createQuizFile(fileName, title);

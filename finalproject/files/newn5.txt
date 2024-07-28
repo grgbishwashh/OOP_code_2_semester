@@ -1,0 +1,21 @@
+Q1: what is the meaning of　ごはん？
+Option 1: cooked rice
+Option 2: rice
+Option 3: water
+Option 4: meat
+Correct Option: 1
+
+Q2: what is the meaning of　にく
+Option 1: cooked rice
+Option 2: meat
+Option 3: water
+Option 4: house
+Correct Option: 2
+
+Q3: what is the meaning of　たべもの
+Option 1: food
+Option 2: drink
+Option 3: thing
+Option 4: none
+Correct Option: 1
+

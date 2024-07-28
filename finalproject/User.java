@@ -1,4 +1,4 @@
-package twentyfour.spring.oop.group2.finalproject.src;
+package twentyfour.spring.oop.group2.finalproject.m23w7314;
 
 public class User {
     private String username;

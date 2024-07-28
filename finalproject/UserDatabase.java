@@ -1,4 +1,4 @@
-package twentyfour.spring.oop.group2.finalproject.src;
+package twentyfour.spring.oop.group2.finalproject.m23w7314;
 
 import java.io.*;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class UserDatabase {
-    private static final String FILE_PATH = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\resources\\users.txt";
+    private static final String FILE_PATH = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\m23w7314\\files\\users.txt";
     private static Map<String, UserData> users = new HashMap<>();
 
     // Static initialization block to load users from file when the class is loaded

@@ -1,11 +1,13 @@
-package twentyfour.spring.oop.group2.finalproject.src;
+package twentyfour.spring.oop.group2.finalproject.m23w7314;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
 
-public class EditQuiz {
-    private static final String QUIZ_NAMES_FILE = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\resources\\quiz_names.txt";
-    private static final String QUIZ_DIRECTORY = "D:\\KCGI\\src\\twentyfour\\spring\\oop\\group2\\finalproject\\resources\\";
+public class EditQuiz extends QuizAction {
 
     public static void editQuiz(String username) {
         Scanner scanner = new Scanner(System.in);
@@ -169,32 +171,6 @@ public class EditQuiz {
         return quizzes;
     }
 
-    private static List<Question> loadQuestions(String fileName) {
-        List<Question> questions = new ArrayList<>();
-        try (Scanner fileScanner = new Scanner(new File(fileName))) {
-            while (fileScanner.hasNextLine()) {
-                String questionLine = fileScanner.nextLine();
-                if (questionLine.startsWith("Q")) {
-                    String questionText = questionLine.substring(questionLine.indexOf(":") + 2);
-                    String[] options = new String[4];
-                    for (int i = 0; i < 4; i++) {
-                        String optionLine = fileScanner.nextLine();
-                        options[i] = optionLine.substring(optionLine.indexOf(":") + 2);
-                    }
-                    int correctOption = Integer.parseInt(fileScanner.nextLine().split(": ")[1]);
-                    questions.add(new Question(questionText, options, correctOption));
-                    if (fileScanner.hasNextLine()) {
-                        fileScanner.nextLine(); // Consume the empty line after each question block
-                    }
-                }
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred while loading the quiz.");
-            e.printStackTrace();
-        }
-        return questions;
-    }
-
     private static void editQuestion(List<Question> questions, int index) {
         Scanner scanner = new Scanner(System.in);
         Question question = questions.get(index);
@@ -212,7 +188,7 @@ public class EditQuiz {
             System.out.print("Enter new option " + (i + 1) + " text (or press Enter to keep current): ");
             String newOptionText = scanner.nextLine();
             if (!newOptionText.isEmpty()) {
-                question.getOptions()[i] = newOptionText;
+                question.setOption(i, newOptionText);
             }
         }
 
@@ -267,54 +243,5 @@ public class EditQuiz {
 
         questions.add(new Question(questionText, options, correctOption));
         System.out.println("Question added successfully.");
-    }
-
-    private static void saveQuestions(String fileName, List<Question> questions) {
-        try (FileWriter writer = new FileWriter(fileName)) {
-            for (int i = 0; i < questions.size(); i++) {
-                Question question = questions.get(i);
-                writer.write("Q" + (i + 1) + ": " + question.getQuestion() + "\n");
-                for (int j = 0; j < question.getOptions().length; j++) {
-                    writer.write("Option " + (j + 1) + ": " + question.getOptions()[j] + "\n");
-                }
-                writer.write("Correct Option: " + question.getCorrectOption() + "\n");
-                writer.write("\n");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred while saving the quiz.");
-            e.printStackTrace();
-        }
-    }
-
-    private static class Question {
-        private String question;
-        private String[] options;
-        private int correctOption;
-
-        public Question(String question, String[] options, int correctOption) {
-            this.question = question;
-            this.options = options;
-            this.correctOption = correctOption;
-        }
-
-        public String getQuestion() {
-            return question;
-        }
-
-        public void setQuestion(String question) {
-            this.question = question;
-        }
-
-        public String[] getOptions() {
-            return options;
-        }
-
-        public int getCorrectOption() {
-            return correctOption;
-        }
-
-        public void setCorrectOption(int correctOption) {
-            this.correctOption = correctOption;
-        }
     }
 }
